@@ -2,7 +2,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
-public class CheckoutText {
+public class CheckoutTest {
 
   @Test
   public void testCalculateTotal_PA_ClothingAndNonClothing() {
