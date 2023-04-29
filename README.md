@@ -1,7 +1,7 @@
 # Homework
 
 ## Description
-This is project that calculates the total price of items after adding the tax. The function calculateTotal accepts two arguments, a list of items and the state to calculate
+This is a project that calculates the total price of items after adding the tax. The function calculateTotal accepts two arguments, a list of items and the state to calculate
 the tax.
 
 ### Installation
