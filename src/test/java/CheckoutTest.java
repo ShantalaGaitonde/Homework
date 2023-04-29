@@ -64,4 +64,37 @@ public class CheckoutTest {
     Double actualTotal = checkout.calculateTotal("DE", items);
     assertEquals(expectedTotal, actualTotal, 0.001);
   }
+
+  @Test
+  public void testCalculateTotal_Empty_Items() {
+    Checkout checkout = new Checkout();
+    List<Item> items = Arrays.asList();
+    Double expectedTotal = 0.0;
+    Double actualTotal = checkout.calculateTotal("NY", items);
+    assertEquals(expectedTotal, actualTotal, 0.001);
+  }
+
+  @Test
+  public void testCalculateTotal_Empty_State() {
+    Checkout checkout = new Checkout();
+    List<Item> items = Arrays.asList(
+        new Item("Shirt", "Clothing", 20.0),
+        new Item("Book", "others", 10.0)
+    );
+    Double expectedTotal = 0.0;
+    Double actualTotal = checkout.calculateTotal("", items);
+    assertEquals(expectedTotal, actualTotal, 0.001);
+  }
+
+  @Test
+  public void testCalculateTotal_Price_Zero() {
+    Checkout checkout = new Checkout();
+    List<Item> items = Arrays.asList(
+        new Item("Shirt", "Clothing", 0.0)
+    );
+    Double expectedTotal = 0.0;
+    Double actualTotal = checkout.calculateTotal("NY", items);
+    assertEquals(expectedTotal, actualTotal, 0.001);
+  }
+  
 }
